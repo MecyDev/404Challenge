@@ -16,15 +16,15 @@
   text-decoration: none;
 }
 
+html {
+    margin: 0 auto;
+}
+
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     overflow-x: hidden;
 }
 
 header {
-    flex-basis: 100%;
     height: 25px;
     margin-top: 20px;
     margin-bottom: 64px;
@@ -38,50 +38,55 @@ h1 {
     line-height: 25px;
     letter-spacing: -0.08em;
     text-transform: uppercase;
-    margin-left: 24px;
     color: var(--color-1);
+    margin-left: 24px;
 }
 
 .illustration {
-    flex-basis: 100%;
     margin-bottom: 60px;
+    animation-duration: 2s;
+    animation-name: fly-down;
 }
 
 img {
     display: block;
     width: 76.488%;
-    max-width: 539.22px;
     height: auto;
     margin: 0 auto;
     animation-duration: 2s;
-    animation-name: rotate, fly-down;
+    animation-name: rotate;
 }
 
 .content {
-    flex-basis: 100%;
-    margin-left: 6.4%;
+    width: 100%;
 }
 
 .content h2 {
+    width: 350px;
+    height: 142px;
     font-family: var(--font-2);
-    font-style: normal;
-    font-weight: bold;
     font-size: 48px;
     line-height: 71px;
+    font-style: normal;
+    font-weight: bold;
     letter-spacing: -0.035em;
-    margin-bottom: 20px;
     color: var(--color-1);
+    margin-left: 6.4%;
+    margin-bottom: 20px;
 }
 
 .content p {
+    width: 328px;
+    height: 81px;
     font-family: var(--font-2);
-    font-style: normal;
-    font-weight: normal;
     font-size: 18px;
     line-height: 27px;
+    font-style: normal;
+    font-weight: normal;
     letter-spacing: -0.035em;
-    margin-bottom: 90px;
     color: var(--color-2);
+    margin-left: 6.4%;
+    margin-bottom: 90px;
 }
 
 .btn {
@@ -94,6 +99,7 @@ img {
     text-transform: uppercase;
     color: #FFF;
     padding: 24px 43px;
+    margin-left: 6.4%;
     background: var(--color-1);
 }
 
@@ -101,13 +107,7 @@ img {
     background-color: var(--color-2);
 }
 
-footer a:hover {
-    color: #4f4f4f;
-    text-decoration: underline #4f4f4f;
-}
-
 footer {
-    flex-basis: 100%;
     margin-top: 119px;
     margin-bottom: 42px;
 }
@@ -122,97 +122,94 @@ footer p {
     color: var(--color-1);
 }
 
-  /*Tablette 960 Landscape*/
-  /*@media screen and (max-width: 1023) and (orientation: landscape) {
-    html {
+footer a:hover {
+    color: #4f4f4f;
+    text-decoration: underline #4f4f4f;
+}
+
+@media screen and (min-width: 480px){
+    .content div {
+        width: 350px;
         margin: 0 auto;
-        max-width: 960px;
     }
+}
 
-    body {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-
-    header {
-        margin-bottom: 100px;
-    }
-    
-    .illustration {
-        flex-basis: 50%;
-    }
+@media screen and (min-width: 768px){
 
     img {
-        display: block;
-        width: 76.488%;
-        height: auto;
+        width: 539.22px;
+        height: 447.43px;
+    }
+    .content div {
+        width: 420px;
         margin: 0 auto;
-        animation-duration: 2s;
-        animation-name: rotate;
     }
 
-    .content {
-        flex-basis: 50%;
-        margin-left: 0;
-        animation-duration: 2s;
-        animation-name: fly-content;
+    .content h2 {
+        width: 400px;
+        font-size: 56px;
+        line-height: 80px;
+        margin-bottom: 36px;
     }
 
     .content p {
-        width: 381px;
-        height: 108px;;
-        margin-bottom: 54px;
+        width: 400px;
+        font-size: 21px;
+        line-height: 30px;
+        margin-bottom: 75px;
     }
 
-    footer {
-        margin-top: 130px;
-    }
-}*/
+}
 
-/*Desktop at 1440px min*/
-@media screen and (min-width: 720px) {
+@media screen and (min-width: 1300px){
     html {
         margin: 0 auto;
         max-width: 1440px;
     }
 
     body {
-        flex-direction: row;
+        display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
     }
-    
+
+    header {
+        flex-basis: 100%;
+        margin-top: 40px;
+        margin-bottom: 200px;
+    }
+
+    h1 {
+        margin-left: 77px;
+    }
+
     .illustration {
-        flex-basis: 539.22px;
+        width: 539.22px;
         height: 447.43;
+        margin-left: 74px;
     }
 
     img {
-        display: block;
         width: 539.22px;
-        height: 447.33px;
-        margin: 0 auto;
-        animation-duration: 2s;
-        animation-name: rotate;
+        height: 447.43px;
     }
 
     .content {
         flex-basis: 586px;
         height: 467px;
-        margin-left: 0;
         animation-duration: 2s;
         animation-name: fly-content;
     }
 
     .content h2 {
+        width: 586px;
+        height: 190px;
         font-size: 64px;
         line-height: 95px;
         margin-bottom: 36px;
     }
 
     .content p {
-        width: 381px;
+        flex-basis: 381px;
         height: 108px;
         font-size: 24px;
         line-height: 36px;
@@ -220,82 +217,19 @@ footer p {
     }
 
     footer {
+        flex-basis: 100%;
         margin-top: 254px;
         margin-bottom: 39px;
     }
 }
-
-@media screen and (min-width: 1126px) {
-    html {
-        margin: 0 auto;
-        max-width: 1440px;
-    }
-
-    body {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
-    
-    header {
-        margin-top: 40px;
-        margin-bottom: 200px;
-    }
-    
-    h1 {
-        margin-left: 77px;
-    }
-
-    .illustration {
-        flex-basis: 539.22px;
-        height: 447.43;
-    }
-
-    img {
-        display: block;
-        width: 539.22px;
-        height: 447.33px;
-        margin: 0 auto;
-        animation-duration: 2s;
-        animation-name: rotate;
-    }
-
-    .content {
-        flex-basis: 586px;
-        height: 467px;
-        margin-left: 0;
-        animation-duration: 2s;
-        animation-name: fly-content;
-    }
-
-    .content h2 {
-        font-size: 64px;
-        line-height: 95px;
-        margin-bottom: 36px;
-    }
-
-    .content p {
-        width: 381px;
-        height: 108px;;
-        font-size: 24px;
-        line-height: 36px;
-        margin-bottom: 88px;
-    }
-
-    footer {
-        margin-top: 254px;
-        margin-bottom: 39px;
-    }
-}
-
 
 @keyframes fly-down {
     from {
-      margin-bottom: 300%;
+      margin-bottom: 1000px;
     }
   
     to {
-      margin-bottom: 0%;
+      margin-bottom: 60px;
     }
   }
 
